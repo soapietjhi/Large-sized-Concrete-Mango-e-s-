@@ -17,9 +17,7 @@ struct ContentView: View {
             Tab("Gallery", systemImage: "mug.fill"){
                 Gallery()
             }
-        }
-        
-        TabView {
+            
             Tab("Inventory", systemImage: "basket.fill"){
                 Inventory()
             }
