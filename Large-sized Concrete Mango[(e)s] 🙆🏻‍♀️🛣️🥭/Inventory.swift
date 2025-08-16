@@ -9,7 +9,17 @@ import SwiftUI
 
 struct Inventory: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            NavigationLink{
+                carrotView()
+            } label: {
+                Text("Collect more fruits 🍎")
+            }
+            .padding()
+            .foregroundColor(.black)
+            .background(Color.yellow)
+            .cornerRadius(10)
+        }
     }
 }
 

@@ -6,10 +6,29 @@
 //
 
 import SwiftUI
+import AVFoundation
+import Vision
 
 struct carrotView: View {
+    
+    @State private var cameraViewModel = CameraViewModel()
+    @State private var poseViewModel = PoseEstimationViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            // 2a.
+            CameraPreviewView(session: cameraViewModel.session)
+                .edgesIgnoringSafeArea(.all)
+            // 2b.
+            PoseOverlayView(
+                bodyParts: poseViewModel.detectedBodyParts,
+                connections: poseViewModel.bodyConnections
+            )
+        }
+        .task {
+            await cameraViewModel.checkPermission()
+            cameraViewModel.delegate = poseViewModel
+        }
     }
 }
 
