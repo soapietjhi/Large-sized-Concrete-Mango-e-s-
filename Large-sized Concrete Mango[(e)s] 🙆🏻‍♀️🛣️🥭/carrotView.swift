@@ -16,10 +16,12 @@ struct carrotView: View {
     
     var body: some View {
         ZStack {
-            // 2a.
+            
             CameraPreviewView(session: cameraViewModel.session)
                 .edgesIgnoringSafeArea(.all)
-            // 2b.
+            
+            FruitoverlayView()
+            
             PoseOverlayView(
                 bodyParts: poseViewModel.detectedBodyParts,
                 connections: poseViewModel.bodyConnections

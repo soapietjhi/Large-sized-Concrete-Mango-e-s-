@@ -9,16 +9,19 @@ import SwiftUI
 
 struct Inventory: View {
     var body: some View {
-        NavigationStack {
-            NavigationLink{
-                carrotView()
-            } label: {
-                Text("Collect more fruits 🍎")
+        VStack {
+            NavigationStack {
+                NavigationLink{
+                    carrotView()
+                } label: {
+                    Text("Collect more fruits 🍎")
+                }
+                .padding()
+                .foregroundColor(.black)
+                .background(Color.yellow)
+                .cornerRadius(10)
             }
-            .padding()
-            .foregroundColor(.black)
-            .background(Color.yellow)
-            .cornerRadius(10)
+            
         }
     }
 }
