@@ -67,13 +67,13 @@ struct FruitoverlayView: View {
             let fruitx = deviceWidth * fruit.positionx
             let fruity = deviceHeight * fruit.positiony
             
-            let handx = handCoordinates.x
-            let handy = handCoordinates.y
+            let handx = deviceWidth * handCoordinates.x
+            let handy = deviceHeight * handCoordinates.y
             
-            let a = abs(fruitx) + abs(handx)
-            let b = abs(fruity) + abs(handy)
+            let a = fruitx + handx
+            let b = fruity + handy
             let c = sqrt(a*a + b*b)
-            print(c)
+            print(handy)
         }
     }
 }
