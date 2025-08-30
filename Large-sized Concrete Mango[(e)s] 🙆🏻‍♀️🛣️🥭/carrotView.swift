@@ -27,6 +27,7 @@ struct carrotView: View {
                 connections: poseViewModel.bodyConnections
             )
         }
+        .environment(poseViewModel)
         .task {
             await cameraViewModel.checkPermission()
             cameraViewModel.delegate = poseViewModel

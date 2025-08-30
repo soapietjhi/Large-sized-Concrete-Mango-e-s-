@@ -100,4 +100,7 @@ class PoseEstimationViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDel
             }
             return detectedPoints
         }
+    
+// find CGPoint, use pythagoras theorem to find distance between hand and the fruit to decide whether CGPoints match
+    
     }
