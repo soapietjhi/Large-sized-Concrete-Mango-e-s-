@@ -13,22 +13,34 @@ struct potatoView: View {
         NavigationStack {
             VStack(spacing: 40) {
                 HStack(spacing: 30) {
-                    Text("🍎: \(fruitsViewModel.numberofapples)")
-                        .font(.system(size: 50))
-                    Text("🍌: \(fruitsViewModel.numberofbananas)")
-                        .font(.system(size: 50))
+                    Button("🍎: \(fruitsViewModel.numberofapples)"){
+                        print("hi")
+                    }
+                    .font(.system(size: 50))
+                    Button("🍌: \(fruitsViewModel.numberofbananas)"){
+                        print("hi")
+                    }
+                    .font(.system(size: 50))
                 }
                 HStack(spacing: 30) {
-                    Text("🍓: \(fruitsViewModel.numberofstrawberries)")
-                        .font(.system(size: 50))
-                    Text("🥭: \(fruitsViewModel.numberofmangoes)")
-                        .font(.system(size: 50))
+                    Button("🍓: \(fruitsViewModel.numberofstrawberries)"){
+                        print("hi")
+                    }
+                    .font(.system(size: 50))
+                    Button("🥭: \(fruitsViewModel.numberofmangoes)") {
+                        print("hi")
+                    }
+                    .font(.system(size: 50))
                 }
                 HStack(spacing: 30) {
-                    Text("🫐: \(fruitsViewModel.numberofblueberries)")
-                        .font(.system(size: 50))
-                    Text("🍑: \(fruitsViewModel.numberofpeaches)")
-                        .font(.system(size: 50))
+                    Button("🫐: \(fruitsViewModel.numberofblueberries)") {
+                        print("hi")
+                    }
+                    .font(.system(size: 50))
+                    Button("🍑: \(fruitsViewModel.numberofpeaches)"){
+                        print("hi")
+                    }
+                    .font(.system(size: 50))
                 }
             }
             NavigationLink {
