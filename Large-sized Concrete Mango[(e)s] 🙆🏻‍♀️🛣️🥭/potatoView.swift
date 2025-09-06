@@ -17,30 +17,36 @@ struct potatoView: View {
                         print("hi")
                     }
                     .font(.system(size: 50))
+                    .foregroundStyle(.black)
                     Button("🍌: \(fruitsViewModel.numberofbananas)"){
                         print("hi")
                     }
                     .font(.system(size: 50))
+                    .foregroundStyle(.black)
                 }
                 HStack(spacing: 30) {
                     Button("🍓: \(fruitsViewModel.numberofstrawberries)"){
                         print("hi")
                     }
                     .font(.system(size: 50))
+                    .foregroundStyle(.black)
                     Button("🥭: \(fruitsViewModel.numberofmangoes)") {
                         print("hi")
                     }
                     .font(.system(size: 50))
+                    .foregroundStyle(.black)
                 }
                 HStack(spacing: 30) {
                     Button("🫐: \(fruitsViewModel.numberofblueberries)") {
                         print("hi")
                     }
                     .font(.system(size: 50))
+                    .foregroundStyle(.black)
                     Button("🍑: \(fruitsViewModel.numberofpeaches)"){
                         print("hi")
                     }
                     .font(.system(size: 50))
+                    .foregroundStyle(.black)
                 }
             }
             NavigationLink {
@@ -48,6 +54,7 @@ struct potatoView: View {
             } label: {
                 Text("Next")
                     .font(.largeTitle)
+                    .frame(width: 300, height: 100, alignment: .bottomLeading, .rightLeading)
             }
         }
     }
