@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var fruitsViewModel = FruitsViewModel()
     
     var body: some View {
         TabView {
@@ -20,6 +20,7 @@ struct ContentView: View {
                 Inventory()
             }
         }
+        .environment(fruitsViewModel)
         
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct Inventory: View {
     var body: some View {
         VStack {
+            
             NavigationStack {
                 NavigationLink{
                     carrotView()
@@ -21,7 +22,6 @@ struct Inventory: View {
                 .background(Color.yellow)
                 .cornerRadius(10)
             }
-            
         }
     }
 }
