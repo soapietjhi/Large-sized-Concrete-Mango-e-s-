@@ -23,6 +23,8 @@ struct FruitoverlayView: View {
     
     @Environment(PoseEstimationViewModel.self) var poseViewModel
     
+    @Environment(FruitsViewModel.self) var fruitsViewModel
+    
     var body: some View {
         ZStack {
             GeometryReader { geometry in
@@ -75,6 +77,21 @@ struct FruitoverlayView: View {
             let distance = sqrt(base*base + height*height)
             
             if distance <= 100 {
+                if fruit.emoji == "🍎" {
+                    fruitsViewModel.numberofapples += 1
+                } else if fruit.emoji == "🍌" {
+                    fruitsViewModel.numberofbananas += 1
+                } else if fruit.emoji == "🍓" {
+                    fruitsViewModel.numberofstrawberries += 1
+                } else if fruit.emoji == "🥭" {
+                    fruitsViewModel.numberofmangoes += 1
+                } else if fruit.emoji == "🫐" {
+                    fruitsViewModel.numberofblueberries += 1
+                } else if fruit.emoji == "🍑" {
+                    fruitsViewModel.numberofpeaches += 1
+                }
+                
+                
                 fruitsAppearing.removeAll(where: {$0.id == fruit.id})
             }
         }
@@ -84,4 +101,6 @@ struct FruitoverlayView: View {
 #Preview {
     FruitoverlayView()
         .environment(PoseEstimationViewModel())
+        .environment(FruitsViewModel())
+
 }
