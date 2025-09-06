@@ -10,24 +10,32 @@ import SwiftUI
 struct potatoView: View {
     @Environment(FruitsViewModel.self) var fruitsViewModel
     var body: some View {
-        VStack(spacing: 40) {
-            HStack(spacing: 30) {
-                Text("🍎: \(fruitsViewModel.numberofapples)")
-                    .font(.system(size: 50))
-                Text("🍌: \(fruitsViewModel.numberofbananas)")
-                    .font(.system(size: 50))
+        NavigationStack {
+            VStack(spacing: 40) {
+                HStack(spacing: 30) {
+                    Text("🍎: \(fruitsViewModel.numberofapples)")
+                        .font(.system(size: 50))
+                    Text("🍌: \(fruitsViewModel.numberofbananas)")
+                        .font(.system(size: 50))
+                }
+                HStack(spacing: 30) {
+                    Text("🍓: \(fruitsViewModel.numberofstrawberries)")
+                        .font(.system(size: 50))
+                    Text("🥭: \(fruitsViewModel.numberofmangoes)")
+                        .font(.system(size: 50))
+                }
+                HStack(spacing: 30) {
+                    Text("🫐: \(fruitsViewModel.numberofblueberries)")
+                        .font(.system(size: 50))
+                    Text("🍑: \(fruitsViewModel.numberofpeaches)")
+                        .font(.system(size: 50))
+                }
             }
-            HStack(spacing: 30) {
-                Text("🍓: \(fruitsViewModel.numberofstrawberries)")
-                    .font(.system(size: 50))
-                Text("🥭: \(fruitsViewModel.numberofmangoes)")
-                    .font(.system(size: 50))
-            }
-            HStack(spacing: 30) {
-                Text("🫐: \(fruitsViewModel.numberofblueberries)")
-                    .font(.system(size: 50))
-                Text("🍑: \(fruitsViewModel.numberofpeaches)")
-                    .font(.system(size: 50))
+            NavigationLink {
+                BlenderView()
+            } label: {
+                Text("Next")
+                    .font(.largeTitle)
             }
         }
     }
