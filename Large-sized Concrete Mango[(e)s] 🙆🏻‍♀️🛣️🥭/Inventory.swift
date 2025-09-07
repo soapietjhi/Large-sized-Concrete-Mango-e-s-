@@ -11,18 +11,24 @@ struct Inventory: View {
     @Environment(FruitsViewModel.self) var fruitsViewModel
     var body: some View {
         NavigationStack {
-            Text("🍎: \(fruitsViewModel.numberofapples)")
-                .font(.largeTitle)
-            Text("🍌: \(fruitsViewModel.numberofbananas)")
-                .font(.largeTitle)
-            Text("🍓: \(fruitsViewModel.numberofstrawberries)")
-                .font(.largeTitle)
-            Text("🥭: \(fruitsViewModel.numberofmangoes)")
-                .font(.largeTitle)
-            Text("🫐: \(fruitsViewModel.numberofblueberries)")
-                .font(.largeTitle)
-            Text("🍑: \(fruitsViewModel.numberofpeaches)")
-                .font(.largeTitle)
+            HStack (spacing: 40) {
+                VStack (spacing: 40) {
+                    Text("🍎: \(fruitsViewModel.numberofapples)")
+                        .font(.system(size: 50))
+                    Text("🍌: \(fruitsViewModel.numberofbananas)")
+                        .font(.system(size: 50))
+                    Text("🍓: \(fruitsViewModel.numberofstrawberries)")
+                        .font(.system(size: 50))
+                }
+                VStack (spacing: 40) {
+                    Text("🥭: \(fruitsViewModel.numberofmangoes)")
+                        .font(.system(size: 50))
+                    Text("🫐: \(fruitsViewModel.numberofblueberries)")
+                        .font(.system(size: 50))
+                    Text("🍑: \(fruitsViewModel.numberofpeaches)")
+                        .font(.system(size: 50))
+                }
+            }
             NavigationLink{
                 carrotView()
             } label: {
@@ -32,6 +38,7 @@ struct Inventory: View {
             .foregroundColor(.black)
             .background(Color.yellow)
             .cornerRadius(10)
+            .font(.system(size: 30))
         }
     }
 }

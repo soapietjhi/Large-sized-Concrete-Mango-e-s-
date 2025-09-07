@@ -54,7 +54,7 @@ struct potatoView: View {
             } label: {
                 Text("Next")
                     .font(.largeTitle)
-                    .frame(width: 300, height: 100, alignment: .bottomLeading, .rightLeading)
+                    .frame(width: 300, height: 100, alignment: .bottomTrailing)
             }
         }
     }
