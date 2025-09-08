@@ -12,19 +12,18 @@ struct Gallery: View {
     @AppStorage("totalSmoothies") var totalSmoothies: Int = 0
     var body: some View {
         VStack {
-            Text("You made \(totalSmoothies) smoothies! Good job! 😁")
-                .font(.system(size: 30))
-                .padding()
             NavigationStack {
                 NavigationLink {
                     potatoView(totalSmoothies: $totalSmoothies)
                 } label: {
                     Label ("", systemImage: "plus.circle")
-                        .font(.system(size:40))
+                        .font(.system(size:50))
                     Text("Make New Smoothies!")
                         .font(.system(size: 25))
                 }
-                
+                Text("You made \(totalSmoothies) smoothies! Good job! 😁")
+                    .font(.system(size: 30))
+                    .padding()
             }
         }
     }
