@@ -10,6 +10,8 @@ import SwiftUI
 struct potatoView: View {
     @Binding var totalSmoothies: Int
     @EnvironmentObject var fruitsViewModel: FruitsViewModel
+    @State var showAlert = false
+    @State var Next = false
     var body: some View {
         NavigationStack {
             VStack(spacing: 40) {
@@ -18,13 +20,22 @@ struct potatoView: View {
                         
                         if fruitsViewModel.numberofapples != 0 {
                             fruitsViewModel.numberofapples -= 1
+                            Next = true
                         }
+                        else {
+                           showAlert = true
+                        }
+                        
                     }
                     .font(.system(size: 50))
                     .foregroundStyle(.black)
                     Button("🍌: \(fruitsViewModel.numberofbananas)"){
                         if fruitsViewModel.numberofbananas != 0 {
                             fruitsViewModel.numberofbananas -= 1
+                            Next = true
+                        }
+                        else {
+                           showAlert = true
                         }
                     }
                     .font(.system(size: 50))
@@ -34,6 +45,10 @@ struct potatoView: View {
                     Button("🍓: \(fruitsViewModel.numberofstrawberries)"){
                         if fruitsViewModel.numberofstrawberries != 0 {
                             fruitsViewModel.numberofstrawberries -= 1
+                            Next = true
+                        }
+                        else {
+                           showAlert = true
                         }
                     }
                     .font(.system(size: 50))
@@ -41,6 +56,10 @@ struct potatoView: View {
                     Button("🥭: \(fruitsViewModel.numberofmangoes)") {
                         if fruitsViewModel.numberofmangoes != 0 {
                             fruitsViewModel.numberofmangoes -= 1
+                            Next = true
+                        }
+                        else {
+                           showAlert = true
                         }
                     }
                     .font(.system(size: 50))
@@ -50,6 +69,10 @@ struct potatoView: View {
                     Button("🫐: \(fruitsViewModel.numberofblueberries)") {
                         if fruitsViewModel.numberofblueberries != 0 {
                             fruitsViewModel.numberofblueberries -= 1
+                            Next = true
+                        }
+                        else {
+                           showAlert = true
                         }
                     }
                     .font(.system(size: 50))
@@ -57,6 +80,10 @@ struct potatoView: View {
                     Button("🍑: \(fruitsViewModel.numberofpeaches)"){
                         if fruitsViewModel.numberofpeaches != 0 {
                             fruitsViewModel.numberofpeaches -= 1
+                            Next = true
+                        }
+                        else {
+                           showAlert = true
                         }
                     }
                     .font(.system(size: 50))
@@ -64,13 +91,18 @@ struct potatoView: View {
                 }
             }
             
-            NavigationLink {
-                BlenderView(totalSmoothies: $totalSmoothies)
-            } label: {
-                Text("Next")
-                    .font(.largeTitle)
-                    .frame(width: 300, height: 100, alignment: .bottomTrailing)
+            if Next == true {
+                NavigationLink {
+                    BlenderView(totalSmoothies: $totalSmoothies)
+                } label: {
+                    Text("Next")
+                        .font(.largeTitle)
+                        .frame(width: 300, height: 100, alignment: .bottomTrailing)
+                }
             }
+        }
+        .alert("You do not have enough of this fruit to make a Smoothie with it", isPresented: $showAlert) {
+            Button("Ok", role: .cancel) {}
         }
     }
 }
