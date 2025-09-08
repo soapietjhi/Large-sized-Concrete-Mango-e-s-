@@ -13,6 +13,7 @@ enum BlenderStates {
 
 struct BlenderView: View {
     
+    @Binding var totalSmoothies: Int
     @State private var downloadAmount = 0.0
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     @State var BlenderState = BlenderStates.zero
@@ -60,6 +61,7 @@ struct BlenderView: View {
                     }
                     else if BlenderState == .seventyfive {
                         BlenderState = .hundred
+                        totalSmoothies += 1
                     }
                 }
                 .padding(40)
@@ -67,7 +69,7 @@ struct BlenderView: View {
             }
             
             if BlenderState == .hundred {
-                Text("Good job!")
+                Text("🍓 Good job! 🍊")
                     .font(.system(size: 35))
             }
                 
@@ -78,5 +80,5 @@ struct BlenderView: View {
 
 
 #Preview {
-    BlenderView()
+    BlenderView(totalSmoothies: .constant(0))
 }

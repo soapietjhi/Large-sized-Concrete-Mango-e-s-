@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct Gallery: View {
+    
+    @AppStorage("totalSmoothies") var totalSmoothies: Int = 0
     var body: some View {
-        
-        NavigationStack {
-            NavigationLink {
-                potatoView()
-            } label: {
-                Label ("", systemImage: "plus.circle")
-                    .font(.largeTitle)
+        VStack {
+            Text("You made \(totalSmoothies)! Good job! 😁")
+                .font(.system(size: 30))
+            NavigationStack {
+                NavigationLink {
+                    potatoView(totalSmoothies: $totalSmoothies)
+                } label: {
+                    Label ("", systemImage: "plus.circle")
+                        .font(.system(size:40))
+                    Text("Make New Smoothies!")
+                        .font(.system(size: 40))
+                }
+                
             }
-            
         }
     }
 }

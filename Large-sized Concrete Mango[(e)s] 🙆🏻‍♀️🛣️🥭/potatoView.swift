@@ -8,49 +8,64 @@
 import SwiftUI
 
 struct potatoView: View {
+    @Binding var totalSmoothies: Int
     @EnvironmentObject var fruitsViewModel: FruitsViewModel
     var body: some View {
         NavigationStack {
             VStack(spacing: 40) {
                 HStack(spacing: 30) {
                     Button("🍎: \(fruitsViewModel.numberofapples)"){
-                        print("hi")
+                        
+                        if fruitsViewModel.numberofapples != 0 {
+                            fruitsViewModel.numberofapples -= 1
+                        }
                     }
                     .font(.system(size: 50))
                     .foregroundStyle(.black)
                     Button("🍌: \(fruitsViewModel.numberofbananas)"){
-                        print("hi")
+                        if fruitsViewModel.numberofbananas != 0 {
+                            fruitsViewModel.numberofbananas -= 1
+                        }
                     }
                     .font(.system(size: 50))
                     .foregroundStyle(.black)
                 }
                 HStack(spacing: 30) {
                     Button("🍓: \(fruitsViewModel.numberofstrawberries)"){
-                        print("hi")
+                        if fruitsViewModel.numberofstrawberries != 0 {
+                            fruitsViewModel.numberofstrawberries -= 1
+                        }
                     }
                     .font(.system(size: 50))
                     .foregroundStyle(.black)
                     Button("🥭: \(fruitsViewModel.numberofmangoes)") {
-                        print("hi")
+                        if fruitsViewModel.numberofmangoes != 0 {
+                            fruitsViewModel.numberofmangoes -= 1
+                        }
                     }
                     .font(.system(size: 50))
                     .foregroundStyle(.black)
                 }
                 HStack(spacing: 30) {
                     Button("🫐: \(fruitsViewModel.numberofblueberries)") {
-                        print("hi")
+                        if fruitsViewModel.numberofblueberries != 0 {
+                            fruitsViewModel.numberofblueberries -= 1
+                        }
                     }
                     .font(.system(size: 50))
                     .foregroundStyle(.black)
                     Button("🍑: \(fruitsViewModel.numberofpeaches)"){
-                        print("hi")
+                        if fruitsViewModel.numberofpeaches != 0 {
+                            fruitsViewModel.numberofpeaches -= 1
+                        }
                     }
                     .font(.system(size: 50))
                     .foregroundStyle(.black)
                 }
             }
+            
             NavigationLink {
-                BlenderView()
+                BlenderView(totalSmoothies: $totalSmoothies)
             } label: {
                 Text("Next")
                     .font(.largeTitle)
@@ -61,6 +76,6 @@ struct potatoView: View {
 }
 
 #Preview {
-    potatoView()
+    potatoView(totalSmoothies: .constant(0))
         .environmentObject(FruitsViewModel())
 }
