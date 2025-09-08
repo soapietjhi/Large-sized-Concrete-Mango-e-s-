@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct potatoView: View {
-    @Environment(FruitsViewModel.self) var fruitsViewModel
+    @EnvironmentObject var fruitsViewModel: FruitsViewModel
     var body: some View {
         NavigationStack {
             VStack(spacing: 40) {
@@ -62,5 +62,5 @@ struct potatoView: View {
 
 #Preview {
     potatoView()
-        .environment(FruitsViewModel())
+        .environmentObject(FruitsViewModel())
 }

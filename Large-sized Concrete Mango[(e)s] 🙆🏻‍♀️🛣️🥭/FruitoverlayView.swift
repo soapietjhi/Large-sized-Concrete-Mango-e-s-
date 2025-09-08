@@ -23,7 +23,7 @@ struct FruitoverlayView: View {
     
     @Environment(PoseEstimationViewModel.self) var poseViewModel
     
-    @Environment(FruitsViewModel.self) var fruitsViewModel
+    @EnvironmentObject var fruitsViewModel: FruitsViewModel
     
     var body: some View {
         ZStack {
@@ -101,6 +101,6 @@ struct FruitoverlayView: View {
 #Preview {
     FruitoverlayView()
         .environment(PoseEstimationViewModel())
-        .environment(FruitsViewModel())
+        .environmentObject(FruitsViewModel())
 
 }

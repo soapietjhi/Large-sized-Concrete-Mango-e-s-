@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Inventory: View {
-    @Environment(FruitsViewModel.self) var fruitsViewModel
+    @EnvironmentObject var fruitsViewModel: FruitsViewModel
     var body: some View {
         NavigationStack {
             HStack (spacing: 40) {
@@ -45,5 +45,5 @@ struct Inventory: View {
 
 #Preview {
     Inventory()
-        .environment(FruitsViewModel())
+        .environmentObject(FruitsViewModel())
 }

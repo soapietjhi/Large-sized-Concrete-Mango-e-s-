@@ -20,7 +20,7 @@ struct ContentView: View {
                 Inventory()
             }
         }
-        .environment(fruitsViewModel)
+        .environmentObject(fruitsViewModel)
         
     }
 }
