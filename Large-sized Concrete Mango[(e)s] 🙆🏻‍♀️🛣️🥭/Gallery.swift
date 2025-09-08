@@ -21,7 +21,7 @@ struct Gallery: View {
                     Text("Make New Smoothies!")
                         .font(.system(size: 25))
                 }
-                Text("You made \(totalSmoothies) smoothies! Good job! 😁")
+                Text("You made \(totalSmoothies) smoothies! Good job!")
                     .font(.system(size: 30))
                     .padding()
             }

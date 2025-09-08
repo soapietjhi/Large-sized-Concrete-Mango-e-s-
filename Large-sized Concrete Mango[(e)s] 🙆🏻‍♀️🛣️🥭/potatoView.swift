@@ -28,7 +28,7 @@ struct potatoView: View {
                         
                     }
                     .font(.system(size: 50))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                     Button("🍌: \(fruitsViewModel.numberofbananas)"){
                         if fruitsViewModel.numberofbananas != 0 {
                             fruitsViewModel.numberofbananas -= 1
@@ -39,7 +39,7 @@ struct potatoView: View {
                         }
                     }
                     .font(.system(size: 50))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                 }
                 HStack(spacing: 30) {
                     Button("🍓: \(fruitsViewModel.numberofstrawberries)"){
@@ -52,7 +52,7 @@ struct potatoView: View {
                         }
                     }
                     .font(.system(size: 50))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                     Button("🥭: \(fruitsViewModel.numberofmangoes)") {
                         if fruitsViewModel.numberofmangoes != 0 {
                             fruitsViewModel.numberofmangoes -= 1
@@ -63,7 +63,7 @@ struct potatoView: View {
                         }
                     }
                     .font(.system(size: 50))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                 }
                 HStack(spacing: 30) {
                     Button("🫐: \(fruitsViewModel.numberofblueberries)") {
@@ -76,7 +76,7 @@ struct potatoView: View {
                         }
                     }
                     .font(.system(size: 50))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                     Button("🍑: \(fruitsViewModel.numberofpeaches)"){
                         if fruitsViewModel.numberofpeaches != 0 {
                             fruitsViewModel.numberofpeaches -= 1
@@ -87,7 +87,7 @@ struct potatoView: View {
                         }
                     }
                     .font(.system(size: 50))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
                 }
             }
             
