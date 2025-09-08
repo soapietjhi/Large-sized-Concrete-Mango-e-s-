@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Large-sized Concrete Mango[(e)s] 🙆🏻‍♀️🛣️🥭
+//  Large-sized Concrete Mango[a(e)s] 🙆🏻‍♀️🛣️🥭
 //
 //  Created by Sophie Tjhi on 16/8/25.
 //

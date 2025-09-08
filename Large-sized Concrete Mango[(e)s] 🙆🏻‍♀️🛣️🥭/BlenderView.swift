@@ -15,7 +15,7 @@ struct BlenderView: View {
     
     @Binding var totalSmoothies: Int
     @State private var downloadAmount = 0.0
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+  
     @State var BlenderState = BlenderStates.zero
     
     var body: some View {
