@@ -11,19 +11,27 @@ struct Gallery: View {
     
     @AppStorage("totalSmoothies") var totalSmoothies: Int = 0
     var body: some View {
-        VStack {
-            NavigationStack {
+        NavigationStack {
+            VStack (spacing: 25) {
+                Text("You made \(totalSmoothies) smoothies!")
+                    .font(.system(size: 50))
+                    .padding()
+                    .multilineTextAlignment(.center)
                 NavigationLink {
                     potatoView(totalSmoothies: $totalSmoothies)
                 } label: {
-                    Label ("", systemImage: "plus.circle")
-                        .font(.system(size:50))
-                    Text("Make New Smoothies!")
-                        .font(.system(size: 25))
+                    Label ("", systemImage: "plus")
+                        .font(.system(size:35))
+                        .foregroundStyle(.white)
+                    Text("New smoothies")
+                        .font(.system(size: 35))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
                 }
-                Text("You made \(totalSmoothies) smoothies! Good job!")
-                    .font(.system(size: 30))
-                    .padding()
+                .padding()
+                .background(.blue)
+                .cornerRadius(10)
+                
             }
         }
     }

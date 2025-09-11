@@ -14,6 +14,12 @@ struct potatoView: View {
     @State var Next = false
     var body: some View {
         NavigationStack {
+        
+            VStack {
+                Text("Select as many fruits as you want for your smoothie.")
+                    .font(.system(size: 40))
+                    .padding(40)
+            }
             VStack(spacing: 40) {
                 HStack(spacing: 30) {
                     Button("🍎: \(fruitsViewModel.numberofapples)"){
