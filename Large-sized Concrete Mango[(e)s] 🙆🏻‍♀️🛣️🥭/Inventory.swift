@@ -21,7 +21,8 @@ struct Inventory: View {
                             .font(.system(size: 45))
                             .bold()
                             .glowBorder(color: .white, lineWidth: 8)
-                            .offset(x: 0, y: 60)
+                            
+                        
                         
                         NavigationLink{
                             carrotView()
@@ -34,7 +35,6 @@ struct Inventory: View {
                         .frame(maxWidth: .maximum(300, 10))
                         .background(Color.accentColor)
                         .cornerRadius(10)
-                        .offset(x: 0, y: 70)
                         
                         HStack (spacing: 30) {
                             VStack (spacing: 20){
@@ -82,18 +82,18 @@ struct Inventory: View {
                             }
                             
                         }
+                        .padding()
                         .frame(maxWidth: .maximum(340, 100))
                         .background(Color(.systemGray6))
                         .cornerRadius(12)
-                        .offset(x: 0, y: 100)
                         
-                        
-                        Rectangle()
-                            .fill(Color.white)
-                            .frame(width: 500, height: 200)
-                            .frame(maxWidth: .infinity, alignment: .bottom)
-                            .offset(x: 0, y:135)
+                       
+                            
                     }
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(width: 500, height: 200)
+                        .position(x: 200,y: 900)
                 }
         }
     }
