@@ -22,12 +22,16 @@ struct Gallery: View {
                         .bold()
                         .multilineTextAlignment(.center)
                         .glowBorder(color: .white, lineWidth: 10)
+                        .offset(x: 0, y:60)
                         
                     Text ("smoothies!")
                         .font(.system(size: 50))
                         .bold()
                         .multilineTextAlignment(.center)
                         .glowBorder(color: .white, lineWidth: 10)
+                        .offset(x: 0, y:50)
+                    
+                    
                     NavigationLink {
                         potatoView(totalSmoothies: $totalSmoothies)
                     } label: {
@@ -42,6 +46,13 @@ struct Gallery: View {
                     .padding()
                     .background(.teal)
                     .cornerRadius(10)
+                    .offset(x: 0, y:80)
+                    
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(width: 500, height: 200)
+                        .frame(maxWidth: .infinity, alignment: .bottom)
+                        .offset(x: 0, y:309)
                     
                 }
             }

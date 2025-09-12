@@ -25,13 +25,15 @@ struct potatoView: View {
                         .font(.system(size: 30))
                         .bold()
                         .glowBorder(color: .white, lineWidth: 8)
-                       
+                        .offset(x: 0, y:70)
+                            
                         
                         
                     Text(" fruits for your smoothie.")
                         .font(.system(size: 30))
                         .bold()
                         .glowBorder(color: .white, lineWidth: 8)
+                        .offset(x: 0, y:70)
                     
                         
                     
@@ -124,6 +126,7 @@ struct potatoView: View {
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
+                    .offset(x: 0, y:80)
                     
                     if Next == true {
                         NavigationLink {
@@ -134,6 +137,12 @@ struct potatoView: View {
                                 .frame(width: 300, height: 100, alignment: .bottomTrailing)
                         }
                     }
+                    
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(width: 500, height: 200)
+                        .frame(maxWidth: .infinity, alignment: .bottom)
+                        .offset(x: 0, y:130)
                 }
                 .alert("You do not have enough of this fruit to make a Smoothie with it", isPresented: $showAlert) {
                     Button("Ok", role: .cancel) {}
