@@ -14,88 +14,101 @@ struct potatoView: View {
     @State var Next = false
     var body: some View {
         NavigationStack {
-        
+            
             VStack {
-                Text("Select as many fruits as you want for your smoothie.")
-                    .font(.system(size: 40))
-                    .padding(40)
+                Text("Click on the text to select fruits for your smoothie.")
+                    .font(.system(size: 35))
+                    .padding(30)
             }
-            VStack(spacing: 40) {
-                HStack(spacing: 30) {
-                    Button("🍎: \(fruitsViewModel.numberofapples)"){
-                        
+            HStack (spacing: 30) {
+                VStack (spacing: 23){
+                    Text ("🍎")
+                        .font(.system(size: 50))
+                    Text ("🍌")
+                        .font(.system(size: 50))
+                    Text ("🍓")
+                        .font(.system(size: 50))
+                    Text ("🥭")
+                        .font(.system(size: 50))
+                    Text ("🫐")
+                        .font(.system(size: 50))
+                    Text ("🍑")
+                        .font(.system(size: 50))
+                }
+                VStack(spacing: 40) {
+                    Button("Apple            \(fruitsViewModel.numberofapples)"){
                         if fruitsViewModel.numberofapples != 0 {
                             fruitsViewModel.numberofapples -= 1
                             Next = true
                         }
                         else {
-                           showAlert = true
+                            showAlert = true
                         }
-                        
                     }
-                    .font(.system(size: 50))
+                    .font(.system(size: 35))
                     .foregroundStyle(.primary)
-                    Button("🍌: \(fruitsViewModel.numberofbananas)"){
+                    Button("Banana         \(fruitsViewModel.numberofbananas)"){
                         if fruitsViewModel.numberofbananas != 0 {
                             fruitsViewModel.numberofbananas -= 1
                             Next = true
                         }
                         else {
-                           showAlert = true
+                            showAlert = true
                         }
                     }
-                    .font(.system(size: 50))
+                    .font(.system(size: 35))
                     .foregroundStyle(.primary)
-                }
-                HStack(spacing: 30) {
-                    Button("🍓: \(fruitsViewModel.numberofstrawberries)"){
+                    
+                    Button("Strawberry  \(fruitsViewModel.numberofstrawberries)"){
                         if fruitsViewModel.numberofstrawberries != 0 {
                             fruitsViewModel.numberofstrawberries -= 1
                             Next = true
                         }
                         else {
-                           showAlert = true
+                            showAlert = true
                         }
                     }
-                    .font(.system(size: 50))
+                    .font(.system(size: 35))
                     .foregroundStyle(.primary)
-                    Button("🥭: \(fruitsViewModel.numberofmangoes)") {
+                    Button("Mango          \(fruitsViewModel.numberofmangoes)") {
                         if fruitsViewModel.numberofmangoes != 0 {
                             fruitsViewModel.numberofmangoes -= 1
                             Next = true
                         }
                         else {
-                           showAlert = true
+                            showAlert = true
                         }
                     }
-                    .font(.system(size: 50))
+                    .font(.system(size: 35))
                     .foregroundStyle(.primary)
-                }
-                HStack(spacing: 30) {
-                    Button("🫐: \(fruitsViewModel.numberofblueberries)") {
+                    Button("Blueberry    \(fruitsViewModel.numberofblueberries)") {
                         if fruitsViewModel.numberofblueberries != 0 {
                             fruitsViewModel.numberofblueberries -= 1
                             Next = true
                         }
                         else {
-                           showAlert = true
+                            showAlert = true
                         }
                     }
-                    .font(.system(size: 50))
+                    .font(.system(size: 35))
                     .foregroundStyle(.primary)
-                    Button("🍑: \(fruitsViewModel.numberofpeaches)"){
+                    Button("Peach          \(fruitsViewModel.numberofpeaches)"){
                         if fruitsViewModel.numberofpeaches != 0 {
                             fruitsViewModel.numberofpeaches -= 1
                             Next = true
                         }
                         else {
-                           showAlert = true
+                            showAlert = true
                         }
                     }
-                    .font(.system(size: 50))
+                    .font(.system(size: 35))
                     .foregroundStyle(.primary)
                 }
             }
+            .frame(maxWidth: .maximum(330, 100))
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(12)
             
             if Next == true {
                 NavigationLink {

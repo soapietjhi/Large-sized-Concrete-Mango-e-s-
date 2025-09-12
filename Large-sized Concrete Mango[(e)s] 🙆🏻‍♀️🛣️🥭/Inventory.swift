@@ -12,7 +12,7 @@ struct Inventory: View {
     var body: some View {
             NavigationStack {
                 VStack (spacing: 15) {
-                Text("What I have in my inventory?")
+                Text("Inventory")
                     .font(.system(size: 35))
                     
                 NavigationLink{

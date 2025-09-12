@@ -12,16 +12,14 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            Tab("Gallery", systemImage: "mug.fill"){
-                Gallery()
-            }
-            
             Tab("Inventory", systemImage: "basket.fill"){
                 Inventory()
             }
+            Tab("Gallery", systemImage: "mug.fill"){
+                Gallery()
+            }
         }
         .environmentObject(fruitsViewModel)
-        
     }
 }
 
