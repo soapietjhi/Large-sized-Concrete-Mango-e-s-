@@ -24,12 +24,14 @@ struct potatoView: View {
                     Text("Click on the text to select ")
                         .font(.system(size: 30))
                         .bold()
+                        .glowBorder(color: .white, lineWidth: 8)
                        
                         
                         
                     Text(" fruits for your smoothie.")
                         .font(.system(size: 30))
                         .bold()
+                        .glowBorder(color: .white, lineWidth: 8)
                     
                         
                     

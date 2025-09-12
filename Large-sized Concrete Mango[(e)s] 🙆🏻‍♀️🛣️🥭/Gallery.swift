@@ -21,11 +21,13 @@ struct Gallery: View {
                         .font(.system(size: 50))
                         .bold()
                         .multilineTextAlignment(.center)
+                        .glowBorder(color: .white, lineWidth: 10)
                         
                     Text ("smoothies!")
                         .font(.system(size: 50))
                         .bold()
                         .multilineTextAlignment(.center)
+                        .glowBorder(color: .white, lineWidth: 10)
                     NavigationLink {
                         potatoView(totalSmoothies: $totalSmoothies)
                     } label: {

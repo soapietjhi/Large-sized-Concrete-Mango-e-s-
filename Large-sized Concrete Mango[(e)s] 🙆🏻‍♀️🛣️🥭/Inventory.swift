@@ -19,6 +19,7 @@ struct Inventory: View {
                         Text("Inventory")
                             .font(.system(size: 35))
                             .bold()
+                            .glowBorder(color: .white, lineWidth: 8)
                         
                         NavigationLink{
                             carrotView()
