@@ -51,7 +51,7 @@ struct Gallery: View {
                 Rectangle()
                     .fill(Color.white)
                     .frame(width: 500, height: 200)
-                    .position(x: 200,y: 900)
+                    .position(x: 200,y: 895)
             }
         }
     }

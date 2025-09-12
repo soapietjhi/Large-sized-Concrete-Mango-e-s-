@@ -11,25 +11,23 @@ struct ContentView: View {
     @State var fruitsViewModel = FruitsViewModel()
     
     var body: some View {
-            
-            
-            TabView {
-                
-                Tab("Inventory", systemImage: "basket.fill"){
-                    Inventory()
-                    
+        TabView {
+            Inventory()
+                .tabItem {
+                    Label("Inventory", systemImage: "basket.fill")
                 }
-                Tab("Gallery", systemImage: "mug.fill"){
-                    Gallery()
-                    
-                }
-            }
-            .environmentObject(fruitsViewModel)
             
+            Gallery()
+                .tabItem {
+                    Label("Gallery", systemImage: "mug.fill")
+                }
+        }
+        .toolbarBackground(Color(uiColor: .white), for: .tabBar)
+        .environmentObject(fruitsViewModel)
         
     }
 }
-    
+
 #Preview {
     ContentView()
 }

@@ -22,7 +22,7 @@ struct potatoView: View {
                     Text("Click on the text to select fruits for your smoothie.")
                         .font(.system(size: 30))
                         .bold()
-                        .padding(.horizontal, 40)
+                        .padding(.horizontal, 60)
                         .glowBorder(color: .white, lineWidth: 8)
                         .multilineTextAlignment(.center)
                     
@@ -32,19 +32,19 @@ struct potatoView: View {
                     HStack (spacing: 30) {
                         VStack (spacing: 23){
                             Text ("🍎")
-                                .font(.system(size: 50))
+                                .font(.largeTitle)
                             Text ("🍌")
-                                .font(.system(size: 50))
+                                .font(.largeTitle)
                             Text ("🍓")
-                                .font(.system(size: 50))
+                                .font(.largeTitle)
                             Text ("🥭")
-                                .font(.system(size: 50))
+                                .font(.largeTitle)
                             Text ("🫐")
-                                .font(.system(size: 50))
+                                .font(.largeTitle)
                             Text ("🍑")
-                                .font(.system(size: 50))
+                                .font(.largeTitle)
                         }
-                        VStack(spacing: 40) {
+                        VStack(spacing: 31) {
                             Button("Apple            \(fruitsViewModel.numberofapples)"){
                                 if fruitsViewModel.numberofapples != 0 {
                                     fruitsViewModel.numberofapples -= 1
@@ -54,7 +54,7 @@ struct potatoView: View {
                                     showAlert = true
                                 }
                             }
-                            .font(.system(size: 35))
+                            .font(.title)
                             .foregroundStyle(.primary)
                             Button("Banana         \(fruitsViewModel.numberofbananas)"){
                                 if fruitsViewModel.numberofbananas != 0 {
@@ -65,7 +65,7 @@ struct potatoView: View {
                                     showAlert = true
                                 }
                             }
-                            .font(.system(size: 35))
+                            .font(.title)
                             .foregroundStyle(.primary)
                             
                             Button("Strawberry  \(fruitsViewModel.numberofstrawberries)"){
@@ -77,7 +77,7 @@ struct potatoView: View {
                                     showAlert = true
                                 }
                             }
-                            .font(.system(size: 35))
+                            .font(.title)
                             .foregroundStyle(.primary)
                             Button("Mango          \(fruitsViewModel.numberofmangoes)") {
                                 if fruitsViewModel.numberofmangoes != 0 {
@@ -88,7 +88,7 @@ struct potatoView: View {
                                     showAlert = true
                                 }
                             }
-                            .font(.system(size: 35))
+                            .font(.title)
                             .foregroundStyle(.primary)
                             Button("Blueberry    \(fruitsViewModel.numberofblueberries)") {
                                 if fruitsViewModel.numberofblueberries != 0 {
@@ -99,7 +99,7 @@ struct potatoView: View {
                                     showAlert = true
                                 }
                             }
-                            .font(.system(size: 35))
+                            .font(.title)
                             .foregroundStyle(.primary)
                             Button("Peach          \(fruitsViewModel.numberofpeaches)"){
                                 if fruitsViewModel.numberofpeaches != 0 {
@@ -110,11 +110,11 @@ struct potatoView: View {
                                     showAlert = true
                                 }
                             }
-                            .font(.system(size: 35))
+                            .font(.title)
                             .foregroundStyle(.primary)
                         }
                     }
-                    .frame(maxWidth: .maximum(330, 100))
+                    .frame(maxWidth: .maximum(300, 100))
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
@@ -126,9 +126,15 @@ struct potatoView: View {
                         } label: {
                             Text("Next")
                                 .font(.largeTitle)
-                                .frame(width: 300, height: 100, alignment: .bottomTrailing)
+                                .foregroundStyle(.black)
                         }
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: 500, height: 25)
+                    } else{
+                        Spacer().frame(height: 25)
                     }
+
                 }
                 .alert("You do not have enough of this fruit to make a Smoothie with it", isPresented: $showAlert) {
                     Button("Ok", role: .cancel) {}
@@ -136,7 +142,7 @@ struct potatoView: View {
                 Rectangle()
                     .fill(Color.white)
                     .frame(width: 500, height: 200)
-                    .position(x: 200,y: 900)
+                    .position(x: 200,y: 880)
             }
         }
     }

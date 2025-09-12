@@ -13,14 +13,15 @@ struct Inventory: View {
             NavigationStack {
                 
                 ZStack{
-                    
-                    
+
                     Image("Fruit")
-                    VStack (spacing: 15) {
+                        
+                    VStack {
                         Text("Inventory")
-                            .font(.system(size: 45))
+                            .font(.largeTitle)
                             .bold()
                             .glowBorder(color: .white, lineWidth: 8)
+                            .padding()
                             
                         
                         
@@ -30,66 +31,71 @@ struct Inventory: View {
                             Text("Collect more fruits")
                         }
                         .padding()
-                        .font(.system(size: 27))
+                        .font(.title)
                         .foregroundColor(.white)
                         .frame(maxWidth: .maximum(300, 10))
                         .background(Color.accentColor)
                         .cornerRadius(10)
                         
+                        
                         HStack (spacing: 30) {
-                            VStack (spacing: 20){
+                            VStack (spacing: 30){
                                 Text("🍎")
-                                    .font(.system(size: 50))
+                                    .font(.largeTitle)
                                 Text("🍌")
-                                    .font(.system(size: 50))
+                                    .font(.largeTitle)
                                 Text("🍓")
-                                    .font(.system(size: 50))
+                                    .font(.largeTitle)
                                 Text("🥭")
-                                    .font(.system(size: 50))
+                                    .font(.largeTitle)
                                 Text("🫐")
-                                    .font(.system(size: 50))
+                                    .font(.largeTitle)
                                 Text("🍑")
-                                    .font(.system(size: 50))
+                                    .font(.largeTitle)
                             }
                             VStack (spacing: 37){
                                 Text("Apple")
-                                    .font(.system(size: 35))
+                                    .font(.title)
                                 Text("Banana")
-                                    .font(.system(size: 35))
+                                    .font(.title)
                                 Text("Strawberry")
-                                    .font(.system(size: 35))
+                                    .font(.title)
                                 Text("Mango")
-                                    .font(.system(size: 35))
+                                    .font(.title)
                                 Text("Blueberry")
-                                    .font(.system(size: 35))
+                                    .font(.title)
                                 Text("Peach")
-                                    .font(.system(size: 35))
+                                    .font(.title)
                             }
-                            VStack (spacing: 30) {
+                            VStack (spacing: 37) {
                                 Text("\(fruitsViewModel.numberofapples)")
-                                    .font(.system(size: 40))
+                                    .font(.title)
                                 Text("\(fruitsViewModel.numberofbananas)")
-                                    .font(.system(size: 40))
+                                    .font(.title)
                                 Text("\(fruitsViewModel.numberofstrawberries)")
-                                    .font(.system(size: 40))
+                                    .font(.title)
                                 Text("\(fruitsViewModel.numberofmangoes)")
-                                    .font(.system(size: 40))
+                                    .font(.title)
                                 Text("\(fruitsViewModel.numberofblueberries)")
-                                    .font(.system(size: 40))
+                                    .font(.title)
                                 Text("\(fruitsViewModel.numberofpeaches)")
-                                    .font(.system(size: 40))
+                                    .font(.title)
                                 
                             }
                             
                         }
-                        .padding()
-                        .frame(maxWidth: .maximum(340, 100))
+                        .padding(8)
+                        .frame(maxWidth: 320)
                         .background(Color(.systemGray6))
                         .cornerRadius(12)
+                        .padding()
+                        
                         
                        
                             
                     }
+                    Spacer()
+                    
                     Rectangle()
                         .fill(Color.white)
                         .frame(width: 500, height: 200)
