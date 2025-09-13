@@ -22,6 +22,7 @@ struct Gallery: View {
                         .bold()
                         .multilineTextAlignment(.center)
                         .glowBorder(color: .white, lineWidth: 10)
+                        .foregroundStyle(.black)
                         
                         
                     Text ("smoothies!")
@@ -29,6 +30,7 @@ struct Gallery: View {
                         .bold()
                         .multilineTextAlignment(.center)
                         .glowBorder(color: .white, lineWidth: 10)
+                        .foregroundStyle(.black)
                         
                     
                     

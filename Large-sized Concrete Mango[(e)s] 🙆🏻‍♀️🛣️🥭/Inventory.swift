@@ -22,6 +22,7 @@ struct Inventory: View {
                             .bold()
                             .glowBorder(color: .white, lineWidth: 8)
                             .padding()
+                            .foregroundStyle(.black)
                             
                         
                         

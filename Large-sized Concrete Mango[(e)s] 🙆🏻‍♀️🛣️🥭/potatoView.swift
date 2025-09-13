@@ -25,6 +25,7 @@ struct potatoView: View {
                         .padding(.horizontal, 60)
                         .glowBorder(color: .white, lineWidth: 8)
                         .multilineTextAlignment(.center)
+                        .foregroundStyle(.black)
                     
                     
                     
